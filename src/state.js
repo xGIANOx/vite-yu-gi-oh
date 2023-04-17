@@ -8,6 +8,8 @@ export const state = reactive(
     numberOfCards: null,
     startingCard: 0,
     types: [],
+    filter: "", 
+    loading : true,
     
     getNumberOfCards(apiToFetch) {
       axios
@@ -30,7 +32,8 @@ export const state = reactive(
     },
    
     fetchCardsToUse(number, api) {
-      axios.get(`${api}?num=50&offset=${number}`)
+      axios
+      .get(`${api}?num=50&offset=${number}`)
       .then(response => {
         this.cards = response.data.data;
         this.retrieveArchetypes(this.cards);
@@ -46,7 +49,7 @@ export const state = reactive(
           this.types.push(card.type)
         }
       })
-      console.log(this.types);
+      this.loading = false;
     }
   }
 )

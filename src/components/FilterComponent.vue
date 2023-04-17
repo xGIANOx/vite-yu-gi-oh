@@ -11,11 +11,10 @@ export default {
 </script>
 
 <template>
-  <div class="select_btn py-3">
-    <select class="rounded">
-    <option v-for="item in state.types" value="item">{{ item }}</option>
+  <select v-model="state.filter" class="rounded mt-3">
+    <option value="">Choose a type</option>
+    <option v-for="item in state.types" :value="item">{{ item }}</option>
   </select>
-  </div>
 </template>
 
 <style></style>
