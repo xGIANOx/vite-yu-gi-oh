@@ -12,7 +12,7 @@ export default {
 
 <template>
   <select v-model="state.filter" class="rounded mt-3">
-    <option value="">Choose a type</option>
+    <option value="">All types</option>
     <option v-for="item in state.types" :value="item">{{ item }}</option>
   </select>
 </template>

@@ -22,8 +22,8 @@ export default {
 <main>
   <div class="container">
     
-    <FilterComponent v-if="state.cards != []" :cards="state.cards"></FilterComponent>
-    <CounterComponent v-if="state.cards != []" :cards="state.cards"></CounterComponent>
+    <FilterComponent  :cards="state.cards"></FilterComponent>
+    <CounterComponent :cards="state.cards"></CounterComponent>
     <CardsComponent></CardsComponent>
   </div>
 </main>
